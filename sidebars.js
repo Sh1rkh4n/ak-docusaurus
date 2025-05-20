@@ -23,6 +23,19 @@ const sidebars = {
       dirName: 'system-guides'
     }
   ],
+  petStoreSidebar: [
+    {
+      type: "category",
+      label: "Petstore",
+      link: {
+        type: "generated-index",
+        title: "Petstore API",
+        slug: "/category/petstore-api"
+      },
+      items: require('./docs/petstore/sidebar'), // Hivatkozás a plugin által generált oldalsáv fájlra
+    }
+  ],
+  eszkoznyilvantartoSidebar: require('./docs/eszkoznyilvantarto/sidebar'), // Hivatkozás a plugin által generált oldalsáv fájlra
   // But you can create a sidebar manually
   /*
   tutorialSidebar: [

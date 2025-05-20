@@ -43,6 +43,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          docItemComponent: "@theme/ApiItem", // Az API elemek komponensei
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -69,6 +70,37 @@ const config = {
       }),
     ],
   ],
+
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi', // A plugin egyedi azonosítója
+        docsPluginId: 'classic',
+        config: {
+          petstore: {  // Egyedi azonosító az API doksinak
+            specPath: 'openapi/petstore_oas.yaml', // Az OpenAPI fájl elérési útja
+            outputDir: 'docs/petstore', // A generált Markdown fájlok helye
+            sidebarOptions: {
+              groupPathsBy: 'tag',  // Csoportosítás tagek alapján az oldalsávban
+              // További opciók a plugin dokumentációja szerint
+            },
+          },
+          eszkoznyilvantarto: {  // Egyedi azonosító az API doksinak
+            specPath: 'openapi/eszkoznyilvantarto_oas.yaml', // Az OpenAPI fájl elérési útja
+            outputDir: 'docs/eszkoznyilvantarto', // A generált Markdown fájlok helye
+            sidebarOptions: {
+              groupPathsBy: 'tag',  // Csoportosítás tagek alapján az oldalsávban
+              categoryLinkSource: "tag",
+              // További opciók a plugin dokumentációja szerint
+            },
+            showSchemas: true,
+          },
+        }
+      }
+    ]
+  ],
+  themes: ['docusaurus-theme-openapi-docs'],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -102,6 +134,20 @@ const config = {
             label: 'System-Guides',
           },
           {
+            //to: '/docs/system-guides/system-guide',
+            type: 'docSidebar',
+            sidebarId: 'petStoreSidebar',
+            position: 'left',
+            label: 'PetStore API',
+          },
+          {
+            //to: '/docs/system-guides/system-guide',
+            type: 'docSidebar',
+            sidebarId: 'eszkoznyilvantartoSidebar',
+            position: 'left',
+            label: 'Eszkoznyilvantarto API',
+          },
+          {
             to: '/blog',
             label: 'Blog',
             position: 'left'
@@ -115,10 +161,10 @@ const config = {
             type: 'localeDropdown',
             position: 'right',
           },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-          },
+          // {
+          //   type: 'docsVersionDropdown',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
@@ -143,11 +189,7 @@ const config = {
               {
                 label: 'Discord',
                 href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
+              }
             ],
           },
           {
@@ -159,12 +201,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/Sh1rkh4n',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus by Adam Kovari.`,
+        copyright: `Copyright © ${new Date().getFullYear()} AK Project, Inc. Built with Docusaurus by Adam Kovari.`,
       },
       prism: {
         theme: prismThemes.github,

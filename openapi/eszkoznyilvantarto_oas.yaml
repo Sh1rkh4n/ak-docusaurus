@@ -1,0 +1,170 @@
+openapi: 3.0.3
+info:
+  title: Eszköz Nyilvántartó API
+  version: 1.0.0
+  description: |
+    Ez az API tesztelési célból készült. 
+    
+    Egyszerű API eszközök nyilvántartására. Lehetőség van új eszköz létrehozására, egy adott eszköz lekérdezésére és listázására szűrőkkel.
+  termsOfService: https://terms.hu/példaterms
+  contact:
+    email: pelda@openapi.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+tags:
+  - name: eszkozok
+    description: Az eszközökhöz tartozó megoldások.
+    x-displayName: Eszközök Kezelése 🛠️
+paths:
+  /eszkozok:
+    post:
+      tags:
+        - eszkozok
+      summary: Új eszköz létrehozása
+      description: Új eszköz létrehozása a megadott adatokkal. Az eszköz azonnal elérhető lesz a nyilvántartásban.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EszkozInput'
+      responses:
+        '201':
+          description: Sikeres létrehozás
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Eszkoz'
+        '400':
+          description: Hibás kérés (hiányzó kötelező mező)
+    get:
+      tags:
+          - eszkozok
+      summary: Összes eszköz listázása
+      description: Az összes eszköz listázása. Opcionálisan szűrhetünk gyártó, típus és raktáron lévő eszközök alapján.
+      parameters:
+        - name: tipus
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: gyarto
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: raktaron
+          in: query
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Eszközök listája
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Eszkoz'
+
+  /eszkozok/{eszkozId}:
+    get:
+      tags:
+          - eszkozok
+      summary: Konkrét eszköz lekérdezése
+      description: Lekérdezi a megadott azonosítójú eszköz adatait.
+      parameters:
+        - name: eszkozId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Eszköz megtalálva
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Eszkoz'
+        '404':
+          description: Nem található ilyen azonosítójú eszköz
+
+components:
+  schemas:
+    Eszkoz:
+      type: object
+      description: Az eszköz adatai
+      properties:
+        id:
+          type: string
+          description: Az eszköz egyedi azonosítója
+          format: uuid
+          readOnly: true
+          example: uuid-1234-abcd-5678
+        nev:
+          type: string
+          description: Az eszköz neve
+          example: Szuper Okos Kütyü
+        gyarto:
+          type: string
+          description: Az eszköz gyártója
+          example: Tech Kft.
+        tipus:
+          type: string
+          description: Az eszköz típusa
+          enum: [Okosotthon, Viselhető, Audio, Egyéb]
+          example: Okosotthon
+        ar:
+          type: number
+          description: Az eszköz ára
+          format: float
+          example: 150.99
+        raktaron:
+          type: boolean
+          description: Az eszköz raktáron van-e
+          example: true
+        utolsoFrissites:
+          type: string
+          description: Az eszköz utolsó frissítésének időpontja
+          format: date-time
+          readOnly: true
+          example: 2025-04-27T20:00:00Z
+      required:
+        - nev
+        - gyarto
+        - tipus
+        - raktaron
+
+    EszkozInput:
+      type: object
+      description: Az új eszköz adatai
+      properties:
+        nev:
+          type: string
+          description: Az eszköz neve
+          example: Új Okos Kütyü
+        gyarto:
+          type: string
+          description: Az eszköz gyártója
+          example: Tech Kft.
+        tipus:
+          type: string
+          description: Az eszköz típusa
+          example: Okosotthon
+          enum: [Okosotthon, Viselhető, Audio, Egyéb]
+        ar:
+          type: number
+          description: Az eszköz ára
+          example: 150.99
+          format: float
+        raktaron:
+          type: boolean
+          description: Az eszköz raktáron van-e
+      required:
+        - nev
+        - gyarto
+        - tipus
+        - raktaron

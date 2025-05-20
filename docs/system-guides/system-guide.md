@@ -71,27 +71,27 @@ Ezen a felületen láthatod a rendszerben elérhető felhasználók listáját. 
 - A jelölőnégyzet segítségével végezd el a kívánt változtatásokat.
 - Kattints a mentés gombra a változtatások véglegesítéséhez.
 
-### Group Management / Csoport kezelő
+### Csoport kezelő
 
 Ezen a felületen módosíthatod a Felhasználói Csoportok leírását és láthatod a rekordokon végzett módosításokat. Az ‘Open Comments’ gombra kattintva írhatsz és olvashatsz a csoportokhoz kapcsolódó megjegyzéseket.
 
-**Csoport leírásának megváltoztatásához :**
+**Csoport leírásának megváltoztatásához:**
 
 - A legördülő menüből válassz ki egy csoportot.
 - Módosítsd a leírást a lista alatti szövegmezőben. A leírásnak 10 és 500 közötti hosszúságúnak kell lennie és csak betűket, számokat és ‘ – ‘, ‘ . ‘, ‘\_’ és ‘,’ karaktereket tartalmazhat.
 - Menteni a  ‘Save’ gomb megnyomásával tudsz.
 
-### Csoporttagság kezelő
+### Tagság kezelő
 
 Ezen az oldalon Felhasználókat adhatsz hozzá Csoportokhoz vagy távolíthatod el őket onnan.
 
-**Felhasználók hozzáadása csoporthoz :**
+**Felhasználók hozzáadása csoporthoz:**
 
 - Válassz ki egy csoportot a legördülő listából.
 - Válaszd ki a hozzáadni kívánt felhasználókat kattintással a bal oldali listából majd nyomj az ‘Add’ gombra.
 - A módosításokat a ‘Save’ gombra kattintva mentheted el.
 
-**Felhasználók eltávolítása csoportból :**
+**Felhasználók eltávolítása csoportból:**
 
 - Válassz ki egy csoportot a legördülő listából.
 - Válaszd ki az eltávolítani kívánt felhasználókat kattintással a jobb oldali listából majd nyomj a ‘Remove’ gombra.

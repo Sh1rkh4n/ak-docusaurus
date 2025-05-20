@@ -1,6 +1,10 @@
 ---
 sidebar_position: 1
-title: API Integráció
+title: API Integrációs Modul
 ---
 
-# API Integrációs Modul
+:::: tip
+
+**[docusaurus.new](https://docusaurus.new)**
+
+::::
