@@ -75,6 +75,11 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       navbar: {
         title: 'My Site',
         logo: {
@@ -88,10 +93,29 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            //to: '/docs/system-guides/system-guide',
+            type: 'docSidebar',
+            sidebarId: 'systemGuideSidebar',
+            position: 'left',
+            label: 'System-Guides',
+          },
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left'
+          },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
+            type: 'docsVersionDropdown',
             position: 'right',
           },
         ],
@@ -104,7 +128,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/docs/tutorials/intro',
               },
             ],
           },
@@ -139,7 +163,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus by Adam Kovari.`,
       },
       prism: {
         theme: prismThemes.github,
