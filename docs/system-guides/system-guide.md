@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Általános információk
 
-:::info
+:::info[**Információ**]
 
 A rendszer angol és magyar nyelven érhető el, amely a felhasználói profilban módosítható.
 
@@ -45,9 +45,9 @@ A kommentek és feljgyzések kerülnek ebbe a fejezetbe.
 
 Az oldalmenüben kattints a User Role Management gombra, ekkor megjelennek az elérhető modulok : User Manager, Group Management, Manage Group Members.
 
-- **User Manager** : megfelelő jogosultsággal itt tudod engedélyezni és korlátozni a felhasználókat, lezárni/feloldani a fiókokat és új felhasználókat importálni WorkDay-es adatok alapján.
-- **Group Management** : megfelelő jogosultsággal itt tudod módosítani a felhasználói csoportok leírását.
-- **Manage Group** megfelelő jogosultsággal itt tudsz hozzáadni felhasználókat a csoportokhoz vagy eltávolítani őket onnan.
+- **Felhasználó Kezelő Manager** : megfelelő jogosultsággal itt tudod engedélyezni és korlátozni a felhasználókat, lezárni/feloldani a fiókokat és új felhasználókat importálni WorkDay-es adatok alapján.
+- **Csoport Kezelő** : megfelelő jogosultsággal itt tudod módosítani a felhasználói csoportok leírását.
+- **Tagság Kezelő** megfelelő jogosultsággal itt tudsz hozzáadni felhasználókat a csoportokhoz vagy eltávolítani őket onnan.
 
 ### Felhasználó kezelő
 
