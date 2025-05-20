@@ -145,7 +145,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'eszkoznyilvantartoSidebar',
             position: 'left',
-            label: 'Eszkoznyilvantarto API',
+            label: 'Eszköznyílvántartó API',
           },
           {
             to: '/blog',
