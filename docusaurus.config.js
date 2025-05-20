@@ -43,6 +43,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          docItemComponent: "@theme/ApiItem", // Az API elemek komponensei
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -81,6 +82,42 @@ const config = {
           autoCollapseCategories: false,
         },
       },
+      plugins: [
+        [
+          'docusaurus-plugin-openapi-docs',
+          {
+            id: 'openapi', // A plugin egyedi azonosítója
+            docsPluginId: 'classic',
+            config: {
+              petstore: {  // Egyedi azonosító az API doksinak
+                specPath: '/openapi/petstore-oas.yaml', // Az OpenAPI fájl elérési útja
+                outputDir: 'docs/petstore', // A generált Markdown fájlok helye
+                sidebarOptions: {
+                  groupPathsBy: 'tag',  // Csoportosítás tagek alapján az oldalsávban
+                  //categoryLinkSource: "tag",
+                  // További opciók a plugin dokumentációja szerint
+                },
+                //downloadButton: true,
+                //showSchemas: true,
+                // Opcionális: downloadButton: true,
+              },
+              eszkoznyilvantarto: {  // Egyedi azonosító az API doksinak
+                specPath: '/eszkoznyilvantarto_oas.yaml', // Az OpenAPI fájl elérési útja
+                outputDir: 'docs/eszkoznyilvantarto', // A generált Markdown fájlok helye
+                sidebarOptions: {
+                  groupPathsBy: 'tag',  // Csoportosítás tagek alapján az oldalsávban
+                  //categoryLinkSource: "tag",
+                  // További opciók a plugin dokumentációja szerint
+                },
+                //downloadButton: true,
+                //showSchemas: true,
+                // Opcionális: downloadButton: true,
+              },
+            }
+          }
+        ]
+      ],
+      themes: ['docusaurus-theme-openapi-docs'],
       navbar: {
         title: 'My Site',
         logo: {
@@ -164,7 +201,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus by Adam Kovari.`,
+        copyright: `Copyright © ${new Date().getFullYear()} AK Project, Inc. Built with Docusaurus by Adam Kovari.`,
       },
       prism: {
         theme: prismThemes.github,

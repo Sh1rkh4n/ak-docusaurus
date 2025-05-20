@@ -1,0 +1,148 @@
+openapi: 3.0.3
+info:
+  title: Eszköz Nyilvántartó API
+  version: 1.0.0
+  description: |
+    Ez az API tesztelési célból készült. 
+    
+    Egyszerű API eszközök nyilvántartására. Lehetőség van új eszköz létrehozására, egy adott eszköz lekérdezésére és listázására szűrőkkel.
+  termsOfService: https://terms.hu/példaterms
+  contact:
+    email: pelda@openapi.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+tags:
+  - name: eszkozok
+    description: Az eszközökhöz tartozó megoldások.
+paths:
+  /eszkozok:
+    post:
+      tags:
+        - eszkozok
+      summary: Új eszköz létrehozása
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EszkozInput'
+      responses:
+        '201':
+          description: Sikeres létrehozás
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Eszkoz'
+        '400':
+          description: Hibás kérés (hiányzó kötelező mező)
+    get:
+      tags:
+          - eszkozok
+      summary: Összes eszköz listázása (opcionális szűrőkkel)
+      parameters:
+        - name: tipus
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: gyarto
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: raktaron
+          in: query
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Eszközök listája
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Eszkoz'
+
+  /eszkozok/{eszkozId}:
+    get:
+      tags:
+          - eszkozok
+      summary: Egy eszköz lekérdezése azonosító alapján
+      parameters:
+        - name: eszkozId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Eszköz megtalálva
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Eszkoz'
+        '404':
+          description: Nem található ilyen azonosítójú eszköz
+
+components:
+  schemas:
+    Eszkoz:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          example: uuid-1234-abcd-5678
+        nev:
+          type: string
+          example: Szuper Okos Kütyü
+        gyarto:
+          type: string
+          example: Tech Kft.
+        tipus:
+          type: string
+          enum: [Okosotthon, Viselhető, Audio, Egyéb]
+          example: Okosotthon
+        ar:
+          type: number
+          format: float
+          example: 150.99
+        raktaron:
+          type: boolean
+          example: true
+        utolsoFrissites:
+          type: string
+          format: date-time
+          readOnly: true
+          example: 2025-04-27T20:00:00Z
+      required:
+        - nev
+        - gyarto
+        - tipus
+        - raktaron
+
+    EszkozInput:
+      type: object
+      properties:
+        nev:
+          type: string
+        gyarto:
+          type: string
+        tipus:
+          type: string
+          enum: [Okosotthon, Viselhető, Audio, Egyéb]
+        ar:
+          type: number
+          format: float
+        raktaron:
+          type: boolean
+      required:
+        - nev
+        - gyarto
+        - tipus
+        - raktaron
