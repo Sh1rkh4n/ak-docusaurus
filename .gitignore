@@ -7,6 +7,8 @@
 # Generated files
 .docusaurus
 .cache-loader
+docs/petstore
+docs/eszkoznyilvantarto
 
 # Misc
 .DS_Store

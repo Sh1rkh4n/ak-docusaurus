@@ -15,12 +15,14 @@ info:
 tags:
   - name: eszkozok
     description: Az eszközökhöz tartozó megoldások.
+    x-displayName: Eszközök Kezelése 🛠️
 paths:
   /eszkozok:
     post:
       tags:
         - eszkozok
       summary: Új eszköz létrehozása
+      description: Új eszköz létrehozása a megadott adatokkal. Az eszköz azonnal elérhető lesz a nyilvántartásban.
       requestBody:
         required: true
         content:
@@ -39,7 +41,8 @@ paths:
     get:
       tags:
           - eszkozok
-      summary: Összes eszköz listázása (opcionális szűrőkkel)
+      summary: Összes eszköz listázása
+      description: Az összes eszköz listázása. Opcionálisan szűrhetünk gyártó, típus és raktáron lévő eszközök alapján.
       parameters:
         - name: tipus
           in: query
@@ -70,7 +73,8 @@ paths:
     get:
       tags:
           - eszkozok
-      summary: Egy eszköz lekérdezése azonosító alapján
+      summary: Konkrét eszköz lekérdezése
+      description: Lekérdezi a megadott azonosítójú eszköz adatait.
       parameters:
         - name: eszkozId
           in: path
@@ -92,31 +96,39 @@ components:
   schemas:
     Eszkoz:
       type: object
+      description: Az eszköz adatai
       properties:
         id:
           type: string
+          description: Az eszköz egyedi azonosítója
           format: uuid
           readOnly: true
           example: uuid-1234-abcd-5678
         nev:
           type: string
+          description: Az eszköz neve
           example: Szuper Okos Kütyü
         gyarto:
           type: string
+          description: Az eszköz gyártója
           example: Tech Kft.
         tipus:
           type: string
+          description: Az eszköz típusa
           enum: [Okosotthon, Viselhető, Audio, Egyéb]
           example: Okosotthon
         ar:
           type: number
+          description: Az eszköz ára
           format: float
           example: 150.99
         raktaron:
           type: boolean
+          description: Az eszköz raktáron van-e
           example: true
         utolsoFrissites:
           type: string
+          description: Az eszköz utolsó frissítésének időpontja
           format: date-time
           readOnly: true
           example: 2025-04-27T20:00:00Z
@@ -128,19 +140,29 @@ components:
 
     EszkozInput:
       type: object
+      description: Az új eszköz adatai
       properties:
         nev:
           type: string
+          description: Az eszköz neve
+          example: Új Okos Kütyü
         gyarto:
           type: string
+          description: Az eszköz gyártója
+          example: Tech Kft.
         tipus:
           type: string
+          description: Az eszköz típusa
+          example: Okosotthon
           enum: [Okosotthon, Viselhető, Audio, Egyéb]
         ar:
           type: number
+          description: Az eszköz ára
+          example: 150.99
           format: float
         raktaron:
           type: boolean
+          description: Az eszköz raktáron van-e
       required:
         - nev
         - gyarto

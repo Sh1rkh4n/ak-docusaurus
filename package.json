@@ -14,7 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "gen-api": "docusaurus gen-api-docs all",
     "clean-api": "docusaurus clean-api-docs all",
-    "reload-preview": "npm clean-api && npm gen-api && npm start"
+    "reload-preview": "npm run clean-api && npm run gen-api && npm start"
   },
   "dependencies": {
     "@docusaurus/core": "3.7.0",

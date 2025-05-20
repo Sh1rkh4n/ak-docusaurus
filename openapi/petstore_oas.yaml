@@ -25,16 +25,19 @@ servers:
 tags:
   - name: pet
     description: Everything about your Pets
+    x-displayName: Pets Summary 🦁
     externalDocs:
       description: Find out more
       url: https://swagger.io
   - name: store
     description: Access to Petstore orders
+    x-displayName: Store Orders 🛍️
     externalDocs:
       description: Find out more about our store
       url: https://swagger.io
   - name: user
     description: Operations about user
+    x-displayName: User Management 👤
 paths:
   /pet:
     put:
