@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      
+
 jobs:
   build:
     name: Build Docusaurus
@@ -16,15 +16,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: yarn
+          cache: npm
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
       # Ez a rész szükséges hogy az API specifikáció is felépüljön.
       - name: Build API Docs
-        run: yarn docusaurus gen-api-docs all
+        run: npm docusaurus gen-api-docs all
       - name: Build website
-        run: yarn build
+        run: npm run build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
