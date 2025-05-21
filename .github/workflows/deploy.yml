@@ -23,6 +23,7 @@ jobs:
       # Ez a rész szükséges hogy az API specifikáció is felépüljön.
       - name: Build API Docs
         run: npm run docusaurus gen-api-docs all
+        
       - name: Build website
         run: npm run build
 
