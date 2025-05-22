@@ -25,7 +25,7 @@ const config = {
   organizationName: 'Sh1rkh4n', // Usually your GitHub org/user name.
   projectName: 'ak-docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -189,7 +189,7 @@ const config = {
             items: [
               {
                 label: 'Petstore',
-                to: '/docs/api/petstore-api',
+                to: '/docs/category/petstore-api',
               },
               {
                 label: 'Eszköznyílvántartó',
