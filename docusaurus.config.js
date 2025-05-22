@@ -25,7 +25,7 @@ const config = {
   organizationName: 'Sh1rkh4n', // Usually your GitHub org/user name.
   projectName: 'ak-docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw', // This is the default behavior for production builds.
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -189,7 +189,7 @@ const config = {
             items: [
               {
                 label: 'Petstore',
-                to: '/docs/category/petstore-api',
+                to: '/docs/api/petstore-api',
               },
               {
                 label: 'Eszköznyílvántartó',
@@ -220,7 +220,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/Sh1rkh4n',
+                href: 'https://github.com/Sh1rkh4n/ak-docusaurus/',
               },
             ],
           },
