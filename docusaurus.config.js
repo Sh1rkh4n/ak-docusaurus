@@ -171,16 +171,35 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Dokumentumok',
             items: [
               {
                 label: 'Tutorial',
                 to: '/docs/tutorials/intro',
               },
+              {
+                label: 'Guides',
+                to: '/docs/system-guides/system-guide',
+              },
+
             ],
           },
           {
-            title: 'Community',
+            title: 'API Leírások',
+            items: [
+              {
+                label: 'Petstore',
+                to: '/docs/api/petstore-api',
+              },
+              {
+                label: 'Eszköznyílvántartó',
+                to: '/docs/api/eszkoznyilvantarto-api',
+              },
+
+            ],
+          },
+          {
+            title: 'Közösségi Oldalak',
             items: [
               {
                 label: 'Stack Overflow',
@@ -193,7 +212,7 @@ const config = {
             ],
           },
           {
-            title: 'More',
+            title: 'Továbbiak',
             items: [
               {
                 label: 'Blog',

@@ -30,12 +30,23 @@ const sidebars = {
       link: {
         type: "generated-index",
         title: "Petstore API",
-        slug: "/category/petstore-api"
+        slug: "/api/petstore-api"
       },
       items: require('./docs/petstore/sidebar'), // Hivatkozás a plugin által generált oldalsáv fájlra
     }
   ],
-  eszkoznyilvantartoSidebar: require('./docs/eszkoznyilvantarto/sidebar'), // Hivatkozás a plugin által generált oldalsáv fájlra
+  eszkoznyilvantartoSidebar: [
+    {
+      type: "category",
+      label: "Eszoznyilvantarto",
+      link: {
+        type: "generated-index",
+        title: "Eszköznyílvántartó API",
+        slug: "/api/eszkoznyilvantarto-api"
+      },
+      items: require('./docs/eszkoznyilvantarto/sidebar'), // Hivatkozás a plugin által generált oldalsáv fájlra
+    }
+  ],
   // But you can create a sidebar manually
   /*
   tutorialSidebar: [

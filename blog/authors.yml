@@ -15,9 +15,20 @@ slorber:
   image_url: https://github.com/slorber.png
   page:
     # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
+    permalink: "/all-sebastien-lorber-articles"
   socials:
     x: sebastienlorber
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+adamk:
+  name: Kővári Ádám
+  title: Kezdő blogger és guideíró
+  url: https://github.com/Sh1rkh4n
+  image_url: https://github.com/Sh1rkh4n.png
+  page: true
+  socials:
+    x: adamk
+    linkedin: adamkovari
+    github: Sh1rkh4n
