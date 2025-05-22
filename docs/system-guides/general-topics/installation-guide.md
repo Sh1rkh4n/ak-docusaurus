@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: Telepítési Útmutató
-description: ThingWorx Telepítési Útmutató
+description: ThingWorx Telepítési Útmutató, általános leírása.
 ---
 
 ---
@@ -46,6 +46,18 @@ Ez a dokumentum lépésről lépésre bemutatja a ThingWorx Foundation szerver t
 
 1. Állítsd be a `CATALINA_OPTS` értékét pl.:
 
-   ```shell
-   -Xms512m -Xmx4g -Dfile.encoding=UTF-8 -Djava.library.path="C:\ThingworxStorage"
-   ```
+```shell
+-Xms512m -Xmx4g -Dfile.encoding=UTF-8 -Djava.library.path="C:\ThingworxStorage"
+```
+
+---
+
+A telepítés befejezését követően, további konfigurációs beállításokat az alábbi helyen találhatóak: [#TWX - Konfiguráció](/docs/system-guides/general-topics/configuration-tips.md).
+
+:::note
+
+További segítséget a program telepítésével vagy működésével kapcsolatosan az alábbi weboldalon talál:
+
+>**[Thingworx - PTC - Support](https://www.ptc.com/en/support/help/Thingworx)**
+
+:::
