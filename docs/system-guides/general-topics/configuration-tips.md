@@ -9,6 +9,7 @@ description: ThingWorx Konfigurációs Útmutató
 ## ⚙️ **ThingWorx Konfiguráció – `thingworx-konfiguracio`**
 
 Ez a dokumentum bemutatja a ThingWorx alapvető konfigurációját a `platform-settings.json` rendszerfájl segítségével.
+
 ## 1. `platform-settings.json` szerkezete
 
 ::::tip
@@ -17,8 +18,7 @@ Helye: `ThingworxPlatform/platform-settings.json`
 
 ::::
 
-
-**Példa `platform-settings.json` fájl:** 
+**Példa `platform-settings.json` fájl:**
 
 ```json
 {
@@ -52,3 +52,14 @@ Helye: `ThingworxPlatform/platform-settings.json`
     "AllowNonSecureConnections": false
   }
 }
+```
+
+---
+
+:::note
+
+További segítséget a program konfigurációjával vagy működésével kapcsolatosan az alábbi weboldalon talál:
+
+>**[Thingworx - PTC - Support](https://www.ptc.com/en/support/help/Thingworx)**
+
+:::

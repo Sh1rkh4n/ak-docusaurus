@@ -7,6 +7,8 @@ title: API Dokumentáció – Integrációs Példa
 
 Ez a dokumentáció bemutat egy REST alapú API integrációs példát, amely lehetővé teszi külső rendszerek számára adatok lekérdezését és frissítését.
 
+Általános leírást az alábbi helyen talál: [#API Integráció](/docs/system-guides/advanced-topics/api-integration.md).
+
 ---
 
 ## Hitelesítés
