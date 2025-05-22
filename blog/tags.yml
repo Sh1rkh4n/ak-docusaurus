@@ -17,3 +17,13 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+github:
+  label: GitHub
+  permalink: /github
+  description: GitHub tag description
+
+training:
+  label: Training
+  permalink: /training
+  description: Training tag description

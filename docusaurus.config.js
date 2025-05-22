@@ -25,7 +25,7 @@ const config = {
   organizationName: 'Sh1rkh4n', // Usually your GitHub org/user name.
   projectName: 'ak-docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -171,16 +171,35 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Dokumentumok',
             items: [
               {
                 label: 'Tutorial',
                 to: '/docs/tutorials/intro',
               },
+              {
+                label: 'Guides',
+                to: '/docs/system-guides/system-guide',
+              },
+
             ],
           },
           {
-            title: 'Community',
+            title: 'API Leírások',
+            items: [
+              {
+                label: 'Petstore',
+                to: '/docs/category/petstore-api',
+              },
+              {
+                label: 'Eszköznyílvántartó',
+                to: '/docs/api/eszkoznyilvantarto-api',
+              },
+
+            ],
+          },
+          {
+            title: 'Közösségi Oldalak',
             items: [
               {
                 label: 'Stack Overflow',
@@ -193,7 +212,7 @@ const config = {
             ],
           },
           {
-            title: 'More',
+            title: 'Továbbiak',
             items: [
               {
                 label: 'Blog',

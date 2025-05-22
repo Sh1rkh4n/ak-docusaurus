@@ -3,6 +3,8 @@ info:
   title: Eszköz Nyilvántartó API
   version: 1.0.0
   description: |
+    Egy egyedi eszköznyílvántartó API felépítése és kezelése.
+
     ::::warning[Figyelem!]
 
     Ez az API tesztelési célból készült. 
@@ -10,12 +12,12 @@ info:
     ::::
 
     ## Egyszerű API eszközök nyilvántartása. 
-    
+
     Az API segítségével Lehetőség nyílik:
     - új eszköz létrehozására
     - egy megadott eszköz lekérdezésére
     - az eszközök listázására, szűrőket alkalmazva
-    
+
   termsOfService: https://terms.hu/példaterms
   contact:
     email: pelda@openapi.io
@@ -38,19 +40,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/EszkozInput'
+              $ref: "#/components/schemas/EszkozInput"
       responses:
-        '201':
+        "201":
           description: Sikeres létrehozás
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Eszkoz'
-        '400':
+                $ref: "#/components/schemas/Eszkoz"
+        "400":
           description: Hibás kérés (hiányzó kötelező mező)
     get:
       tags:
-          - eszkozok
+        - eszkozok
       summary: Összes eszköz listázása
       description: Az összes eszköz listázása. Opcionálisan szűrhetünk gyártó, típus és raktáron lévő eszközök alapján.
       parameters:
@@ -70,19 +72,19 @@ paths:
           schema:
             type: boolean
       responses:
-        '200':
+        "200":
           description: Eszközök listája
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Eszkoz'
+                  $ref: "#/components/schemas/Eszkoz"
 
   /eszkozok/{eszkozId}:
     get:
       tags:
-          - eszkozok
+        - eszkozok
       summary: Konkrét eszköz lekérdezése
       description: Lekérdezi a megadott azonosítójú eszköz adatait.
       parameters:
@@ -93,13 +95,13 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Eszköz megtalálva
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Eszkoz'
-        '404':
+                $ref: "#/components/schemas/Eszkoz"
+        "404":
           description: Nem található ilyen azonosítójú eszköz
 
 components:
